@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vasim"
+version = "0.0.1"
+authors = [
+    {name = "Jason Thomas", email = "jarathomas@gmail.com"},
+]
+maintainers = [
+    {name = "Jason Thomas", email = "jarathomas@gmail.com"},
+]
+description = "Simulate verbal autopsy data."
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["verbal autopsy",]
+license = {text = "GPLv3"}
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "openpyxl",
+    "pandas",
+    "numpy"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jarathomas/vasim"
+"Bug Tracker" = "https://github.com/jarathomas/vasim/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"vasim.data" = ["*.xlsx"]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+    ]
